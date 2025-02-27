@@ -62,6 +62,17 @@
   font-weight: 700;
   font-size: 4rem;
 }
+.banner img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  margin: 0px;
+
+    width: 100%;  /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Ensures it doesn't overflow */
+    display: block; /* Removes extra space below the image */
+  
+}
 .nav-links a {
   text-decoration: none;
   font-size: 1.25rem;
@@ -146,13 +157,85 @@ main > section {
   color: rgba(114, 114, 114, 1);
 }
 
+
+.fact-card{
+  border: 1px solid #FF900E;
+  width: 240px;
+  height: 240px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: #FF900E 0px 0px 5px;
+  border-radius: 12px;
+}
+
+.fact-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  
+}
+
+.fact-number{
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.fact-name{
+  font-size: 1.02rem;
+  font-weight: 500;
+  margin-top: 2px;
+  color: rgba(114, 114, 114, 1);
+}
+
+.fact-description{
+  max-width: 540px;
+}
+.fact-card img {
+  width: 70%;
+  height: auto;
+  border-radius: 12px;
+}
+
+
 @media screen and (max-width: 576px) {
   .navbar,.nav-link{
     flex-direction: column;
   }
   .banner img {
-    width: 100%;
-    height: auto;
+    width: 100%;  /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Ensures it doesn't overflow */
+    display: block; /* Removes extra space below the image */
+  }
+  .team-img-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+  .fact-card{
+    border: 1px solid #FF900E;
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: #FF900E 0px 0px 5px;
+    border-radius: 12px;
+  }
+  .fact-number{
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 2.5px;
+    margin-bottom: 10px;
+  }
+  
+  .fact-name{
+    font-size: .6rem;
+    font-weight: 500;
+    margin-top: 1px;
+    color: rgba(114, 114, 114, 1);
   }
 }
 
@@ -185,6 +268,12 @@ main > section {
     flex-direction: column;
     text-align: center;
   }
+  .banner img {
+    width: 100%;  /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Ensures it doesn't overflow */
+    display: block; /* Removes extra space below the image */
+  }
 
   .banner-title {
     font-size: 2.5rem;
@@ -215,10 +304,12 @@ main > section {
   margin-left: 40px
 }
 
+
+
 }
 
-
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  /* Navbar */
   .navbar {
     flex-direction: column;
     text-align: center;
@@ -230,20 +321,37 @@ main > section {
     padding: 4px;
   }
 
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  /* Brand */
+  .brand {
+    font-size: 2.5rem;
+  }
+
+  /* Banner */
   .banner {
     flex-direction: column;
     text-align: center;
   }
 
   .banner-title {
-    font-size: 3rem; /* Reduce title size */
+    font-size: 3rem;
+  }
+
+  .banner-description {
+    font-size: 1.2rem;
   }
 
   .banner img {
-    width: 100%;
-    height: auto;
+    width: 100%;  /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Ensures it doesn't overflow */
+    display: block; /* Removes extra space below the image */
   }
 
+  /* Team Section */
   .team {
     flex-direction: column;
     align-items: center;
@@ -251,15 +359,28 @@ main > section {
   }
 
   .team-img-container {
-    grid-template-columns: repeat(2, 1fr); /* 2-column layout on tablets */
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout for better stacking */
+    gap: 15px;
+    padding: 10px;
   }
 
+  /* Features Section */
   .our-features {
-    margin-left: 0; /* Center content */
+    margin-left: 0;
     text-align: center;
   }
 
   .feature-title {
-    font-size: 2.2rem; /* Reduce font size slightly */
+    font-size: 2.2rem;
+  }
+
+  .feature-list {
+    font-size: 1rem;
+  }
+
+  .fact-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
